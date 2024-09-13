@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Math Object</title>
+</head>
+<body>
+    <h1>Math Object Calculations</h1>
+    <br><br>
+    The value of PI is: <span id="valuePI"></span>
+    <br><br>
+    The ceiling value is: <span id="valueCeil"></span>
+    <br><br>
+    The floor value is: <span id="valueFloor"></span>
+    <br><br>
+    The rounded value is: <span id="valueRound"></span>
+    <br><br>
+    The truncated value is: <span   id="valueTrunc"></span>
+    <br><br>
+    The absolute value is: <span   id="valueAbs"></span>
+    <br><br>
+    The power value is: <span   id="valuePow"></span>
+    <br><br>
+    The square root value is: <span   id="valueSqrt"></span>
+    <br><br>
+    The Maximum value is: <span   id="valueMax"></span>
+    <br><br>
+    The Minimum value is: <span   id="valueMin"></span>
+    <br> <br>
+    The random value is: <span id="valueRandom"></span>
+    <script>
+        function MathObjectcalculations() {
+            // Value of PI
+            let a = Math.PI;
+            document.getElementById("valuePI").innerHTML = a;
+            
+            // Ceiling value of 5.3
+            let b = Math.ceil(5.3);
+            document.getElementById("valueCeil").innerHTML = b;
+
+            // Floor value of 5.8
+            let c = Math.floor(5.8);
+            document.getElementById("valueFloor").innerHTML = c;
+
+            // Rounded value of 5.5
+            let d = Math.round(5.5);
+            document.getElementById("valueRound").innerHTML = d;
+
+
+            let e = Math.trunc(5.3463546354);
+            document.getElementById("valueTrunc").innerHTML = e;
+
+            let f = Math.abs(-4.5);
+            document.getElementById("valueAbs").innerHTML = f;
+             
+            let x=2;
+            let y=4;
+            let z = Math.pow(x,y);
+            let g = Math.sqrt(16);
+            document.getElementById('valuePow').innerHTML = z;
+            document.getElementById("valueSqrt").innerHTML = g;
+
+            let max = Math.max(x,y,z);
+            let min = Math.min(x , y);
+            document.getElementById('valueMax').innerHTML = max;
+            document.getElementById("valueMin").innerHTML = min;
+
+            let random = Math.random() * 100;
+            document.getElementById("valueRandom").innerHTML = random;
+            
+        }
+
+        // Call the function to display the values
+        MathObjectcalculations();
+    </script>
+</body>
+</html>

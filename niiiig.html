@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operators</title>
+</head>
+<body>
+    <h1>JavaScript Example - Spread Operators</h1>
+
+    <button onclick="separateChars()">Show Array Values</button>
+
+    <p id="result"></p>
+
+    <script>
+        function separateChars() {
+            // Define the array with characters
+            let a = "LumbiniAcademic";
+            console.log(a); // Corrected console log syntax
+
+            // Use the spread operator to copy the array
+            let b = [...a];
+
+
+            // Display the arrays in the paragraph element
+            document.getElementById("result").innerText = 
+                b
+        }
+    </script>
+</body>
+</html>

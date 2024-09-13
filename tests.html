@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combine Inputs</title>
+</head>
+<body>
+    <label for="input1">First Text:</label>
+    <input type="text" id="input1">
+    
+    <label for="input2">Second Text:</label>
+    <input type="text" id="input2">
+    
+    <button onclick="combineInputs()">Combine Text</button>
+    
+    <label for="result">Combined Text:</label>
+    <input type="text" id="result" readonly>
+    
+    <script>
+        function combineInputs() {
+            // Get the values of the input fields
+            const input1 = document.getElementById('input1').value;
+            const input2 = document.getElementById('input2').value;
+            
+            // Combine the values
+            const combinedText = input1 + ' ' + input2;
+            
+            // Display the combined text in the result field
+            document.getElementById('result').value = combinedText;
+        }
+    </script>
+</body>
+</html>

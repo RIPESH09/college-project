@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet Functions</title>
+</head>
+<body>
+    <h1>JavaScript Example - Alphabet Functions</h1>
+
+    <button onclick="displayAlphabets()">Display Alphabets</button>
+    <button onclick="displayUpperCase()">Display Uppercase Alphabets</button>
+    <button onclick="displayLowerCase()">Display Lowercase Alphabets</button>
+
+    <p id="result"></p>
+
+    <script>
+        const alphabets = ['a', 'b', 'c', 'd', 'e'];
+        const uppercaseAlphabets = alphabets.map(letter => letter.toUpperCase());
+        const lowercaseAlphabets = alphabets.map(letter => letter.toLowerCase());
+
+        function displayAlphabets() {
+            const allAlphabets = [ ...uppercaseAlphabets];
+            document.getElementById("result").innerText = allAlphabets
+        }
+
+        function displayUpperCase() {
+            document.getElementById("result").innerText = uppercaseAlphabets
+        }
+
+        function displayLowerCase() {
+
+            document.getElementById("result").innerText = lowercaseAlphabets
+        }
+        
+
+
+
+    </script>
+</body>
+</html>

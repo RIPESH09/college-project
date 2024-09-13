@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Strings Example</title>
+</head>
+<body>
+    <h1>JS Strings Example</h1>
+
+    <p>The character is <span id="ex1"></span></p>
+    
+    <p>The index value is <span id="ex2"></span></p>
+
+    <p>The last index value is <span id="ex3"></span></p>
+
+    <p>The length of text is <span id="ex4"></span></p>
+
+    <p>The trimmed email is <span id="ex5"></span></p>
+
+    <p>The uppercase of username is <span id="ex6"></span></p>
+
+    <p>The lowercase of username is <span id="ex7"></span></p>
+
+
+    
+
+    <!-- Input fields to check text -->
+    <p>Enter text to check if it is uppercase:</p>
+    <input type="text" id="input1" placeholder="Enter text 1">
+    <input type="text" id="input2" placeholder="Enter text 2">
+    <input type="button" value="Check Texts" onclick="checkTexts()">
+
+    <script>
+        // JavaScript code
+        let username = "LumbiniAcademic";
+        let email = " Lumbini.academic@gmail.com";
+
+        // Get the 2nd character (index 1) from the string
+        let usernameChar = username.charAt(1);
+        document.getElementById("ex1").innerText = usernameChar;
+
+        // Get the index of the first occurrence of 'C'
+        let usernameIndex = username.indexOf('C');
+        document.getElementById("ex2").innerText = usernameIndex;
+
+        // Get the index of the last occurrence of 'C'
+        let usernameLastIndex = username.lastIndexOf('C');
+        document.getElementById("ex3").innerText = usernameLastIndex;
+
+        // Get the length of the string
+        let usernameLength = username.length;
+        document.getElementById("ex4").innerText = usernameLength;
+
+        // Trim the email to remove leading and trailing spaces
+        let trimmedEmail = email.trim();
+        document.getElementById("ex5").innerText = trimmedEmail;
+
+        // Convert the username to uppercase
+        let uppercaseUsername = username.toUpperCase();
+        document.getElementById("ex6").innerText = uppercaseUsername;
+
+        // Convert the username to lowercase
+        let lowercaseUsername = username.toLowerCase();
+        document.getElementById("ex7").innerText = lowercaseUsername;
+
+        // Function to check if the input texts are uppercase
+        function checkTexts() {
+            let input1 = document.getElementById("input1").value;
+            let input2 = document.getElementById("input2").value;
+
+            let message = "";
+
+            // Check if input1 is uppercase
+            if (input1 === input1.toUpperCase()) {
+                message += 'Input 1 is in uppercase.\n';
+            } else {
+                message += 'Input 1 is not in uppercase.\n';
+            }
+
+            // Check if input2 is uppercase
+            if (input2 === input2.toUpperCase()) {
+                message += 'Input 2 is in uppercase.';
+            } else {
+                message += 'Input 2 is not in uppercase.';
+            }
+
+            // Show the result in an alert
+            alert(message);
+        }
+    </script>
+</body>
+</html>

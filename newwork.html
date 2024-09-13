@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Strings Example</title>
+</head>
+<body>
+    <h1>JS Strings Example</h1>
+
+    <p>The character is <span id="ex1"></span></p>
+    
+    <p>The index value is <span id="ex2"></span></p>
+
+    <p>The last index value is <span id="ex3"></span></p>
+
+    <p>The length of text is <span id="ex4"></span></p>
+
+    <p>The trimmed email is <span id="ex5"></span></p>
+
+    <p>The uppercase of username is <span id="ex6"></span></p>
+
+    <p>The lowercase of username is <span id="ex7"></span></p>
+
+    <p>The extracted username is <span id="ex8"></span></p>
+    
+    <p>The replaced phone number is <span id="ex10"></span></p>
+
+    <p>The reversed username is <span id="ex11"></span></p>
+
+    <p>Enter text to check if it is uppercase:</p>
+    <input type="text" id="input1" placeholder="Enter text 1">
+    <input type="text" id="input2" placeholder="Enter text 2">
+    <input type="button" value="Check Texts" onclick="checkTexts()">
+
+    <h3 id="comparisonResult"></h3>
+
+    <script>
+        let username = "LumbiniAcademic";
+        let email = " Lumbini.academic@gmail.com";
+
+        let usernameChar = username.charAt(1);
+        document.getElementById("ex1").innerText = usernameChar;
+
+        let usernameIndex = username.indexOf('C');
+        document.getElementById("ex2").innerText = usernameIndex;
+
+        let usernameLastIndex = username.lastIndexOf('C');
+        document.getElementById("ex3").innerText = usernameLastIndex;
+
+        let usernameLength = username.length;
+        document.getElementById("ex4").innerText = usernameLength;
+
+        let trimmedEmail = email.trim();
+        document.getElementById("ex5").innerText = trimmedEmail;
+
+        let uppercaseUsername = username.toUpperCase();
+        document.getElementById("ex6").innerText = uppercaseUsername;
+
+        let lowercaseUsername = username.toLowerCase();
+        document.getElementById("ex7").innerText = lowercaseUsername;
+
+        let extractedUsername = email.trim().slice(0, email.indexOf('@'));
+        document.getElementById("ex8").innerText = extractedUsername;
+
+        let phoneNumber = "123-456-123";
+        phoneNumber = phoneNumber.replaceAll('-', ' ');
+        document.getElementById('ex10').innerText = phoneNumber;
+
+        let reversedUsername = username.split('').reverse().join('');
+        document.getElementById("ex11").innerText = reversedUsername;
+
+        function checkTexts() {
+            let input1 = document.getElementById("input1").value;
+            let input2 = document.getElementById("input2").value;
+
+            let message = "";
+
+            if (input1 === input1.toUpperCase() && input1 !== "") {
+                message += 'Input 1 is in uppercase.\n';
+            } else {
+                message += 'Input 1 is not in uppercase.\n';
+            }
+
+            if (input2 === input2.toUpperCase() && input2 !== "") {
+                message += 'Input 2 is in uppercase.\n';
+            } else {
+                message += 'Input 2 is not in uppercase.\n';
+            }
+
+            if (input1 === input2) {
+                message += 'The texts are the same.';
+            } else {
+                message += 'The texts are different.';
+            }
+
+            document.getElementById("comparisonResult").innerText = message;
+
+            alert(message);
+        }
+    </script>
+</body>
+</html>

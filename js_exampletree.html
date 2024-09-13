@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Example 3</title>
+    <style>
+        #result {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello student! <span id="GREETING"></span></h1>
+
+    <input type="number" id="weekdays" placeholder="ENTER weekdays" min="1" max="7">
+    <button onclick="checkWeekdays()">Check Weekdays</button>
+    <div id="result"></div>
+
+    <script>
+        // Initial greeting message based on time of day
+        let currentHour = new Date().getHours();
+        if (currentHour >= 12) {
+            document.getElementById("GREETING").innerText = "Good Afternoon";
+        } else {
+            document.getElementById("GREETING").innerText = "Good Morning";
+        }
+
+        // Function to check weekdays
+        function checkWeekdays() {
+            const input = document.getElementById('weekdays').value;
+            const resultDiv = document.getElementById('result');
+            
+            // Convert input to a number
+            const weekdays = Number(input);
+
+            // Determine the result based on the number of weekdays
+            let resultMessage;
+            switch (weekdays) {
+                case 1:
+                    resultMessage = "Sunday";
+                    break;
+                case 2:
+                    resultMessage = "Monday";
+                    break;
+                case 3:
+                    resultMessage = "Tuesday";
+                    break;
+                case 4:
+                    resultMessage = "Wednesday";
+                    break;
+                case 5:
+                    resultMessage = "Thursday";
+                    break;
+                case 6:
+                    resultMessage = "Friday";
+                    break;
+                case 7:
+                    resultMessage = "Saturday";
+                    break;
+                default:
+                    resultMessage = "Please enter a number between 1 and 7.";
+                    break;
+            }
+
+            // Display the result
+            resultDiv.innerText = resultMessage;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is Sample JS</title>
+    <script>
+        function title1() {
+            const titleElement = document.getElementById('title');
+            titleElement.innerHTML = 'Hello HTML';
+            titleElement.style.fontSize = '60px';
+            titleElement.style.color = 'green';
+        }
+
+        function title2() {
+            const changeColorElement = document.getElementById('ChangeColor');
+            changeColorElement.style.fontSize = '60px';
+            changeColorElement.style.color = 'blue';
+        }
+
+        function showAlert() {
+            alert('Button was clicked!');
+        }
+
+        function calculate(operation) {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let result;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                result = "Please enter valid numbers";
+            } else if (operation === "add") {
+                result = num1 + num2;
+            } else if (operation === "sub") {
+                result = num1 - num2;
+            } else if (operation === "mul") {
+                result = num1 * num2;
+            } else if (operation === "div") {
+                if (num2 !== 0) {
+                    result = num1 / num2;
+                } else {
+                    result = "Cannot divide by zero";
+                }
+            }
+
+            document.getElementById("Result").value = result;
+        }
+
+        function add() {
+            calculate("add");
+        }
+
+        function sub() {
+            calculate("sub");
+        }
+
+        function mul() {
+            calculate("mul");
+        }
+
+        function div() {
+            calculate("div");
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript and HTML Example</h1>
+    
+    <p id="title">Hello JavaScript</p>
+    <p id="ChangeColor">Hello Red Colour Test</p>
+
+    <div>
+        <button onclick="document.getElementById('title').innerHTML = 'HELLO HTML'">Change Text</button>
+        <button onclick="document.getElementById('title').style.fontSize = '60px'">Increase Font Size</button>
+        <button onclick="document.getElementById('ChangeColor').style.color = 'red'">Change Color</button>
+        <button onclick="title1()">Apply Title1 Styles</button>
+        <button onclick="title2()">Apply Title2 Styles</button>
+    </div>
+    
+    <h2>Calculator</h2>
+    <input type="number" placeholder="Enter Number 1" id="num1">
+    <input type="number" placeholder="Enter Number 2" id="num2">
+    <input type="text" placeholder="Result" id="Result" readonly>
+
+    <div>
+        <button onclick="add()">Add</button>
+        <button onclick="sub()">Subtract</button>
+        <button onclick="mul()">Multiply</button>
+        <button onclick="div()">Divide</button>
+    </div>
+</body>
+</html>

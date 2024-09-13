@@ -1,0 +1,35 @@
+
+<html>
+<head>
+    <title>This is Sample JS</title>
+    <script>
+        function title1(){
+         document.getElementById('title').innerHTML= 'Hello HTML';
+         document.getElementById('title').style.FontSize = '60px';
+         document.getElementById('title').style.color = 'green';
+        }
+        function title2(){
+          document.getElementById('ChangeColor').style.fontSize = '60px';
+          document.getElementById('changeColor').style.color = 'blue';
+
+        }
+        function show(){
+
+          document.getElementById('title').style.display = 'block';
+        }
+        function hide(){
+
+          document.getElementById('title').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <p id="title">Hello JavaScript</p>
+    <p id="ChangeColor">Hello Red Colour Test</p>
+    <button onclick="title1()">change Text1</button>
+    <button onclick="title2()">change Text2</button> 
+    <button onclick="hide()">hide</button>
+    <button onclick="show()">show</button>
+    
+</body>
+</html>

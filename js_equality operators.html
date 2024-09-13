@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Equality Operators</title>
+</head>
+<body>
+    <h1>Checking Equality Operators</h1>
+    <p>The value of a is <span id="ex1"></span></p>
+    <p>The value of b is <span id="ex2"></span></p>
+    
+    <input type="button" id="equalityExample" onclick="funcEquality()" value="Click">
+    
+    <script>
+        function funcEquality() {
+            let a = "12345";
+            if (a == 12345) {
+                document.getElementById('ex1').innerText = "Equal";
+            } else {
+                document.getElementById('ex1').innerText = "Not Equal";
+            }
+
+            let b = "12345";
+            if (b === 12345) {
+                document.getElementById('ex2').innerText = "Equal";
+            } else {
+                document.getElementById('ex2').innerText = "Not Equal";
+            }
+
+            // Corrected loop to avoid infinite loop
+            for (let i = 0; i <= 1000000000000000; i++) {
+                if (i === 100000000000) { // Example condition to break the loop
+                    break;
+                } else {
+                    console.log(i);
+                }
+            }
+
+
+            let arr = ["BCA",  "KNEEGA"  ,"BS"]
+        
+            arr.pop
+        }
+    </script>
+</body>
+</html>

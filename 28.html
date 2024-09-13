@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Manipulation Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Manipulation</h1>
+
+    <p>Enter text in Input 1:</p>
+    <input type="text" id="input1" placeholder="Enter text here">
+
+    <p>Enter text in Input 2:</p>
+    <input type="text" id="input2" placeholder="Enter additional text">
+
+    <button onclick="convertToUpper()">Convert Input 1 to Uppercase</button>
+    <button onclick="reverseInput2()">Reverse Input 2 Text</button>
+
+    <p>The uppercase value is:</p>
+    <span id="result1"></span>
+
+    <p>The third character value is:</p>
+    <span id="thirdChar"></span>
+
+    <p>The sliced (4th character onward) reversed value is:</p>
+    <span id="reversedSliced"></span>
+
+    <script>
+        function convertToUpper() {
+            let input1Value = document.getElementById("input1").value;
+            let uppercaseValue = input1Value.toUpperCase();
+            document.getElementById("result1").innerText = uppercaseValue;
+        }
+
+        function reverseInput2() {
+            let input2Value = document.getElementById("input2").value;
+            let thirdCharValue = input2Value.length >= 3 ? input2Value[2] : '';
+            let slicedValue = input2Value.length > 3 ? input2Value.slice(3) : '';
+            let reversedSlicedValue = slicedValue.split('').reverse().join('');
+            document.getElementById("thirdChar").innerText = thirdCharValue;
+            document.getElementById("reversedSliced").innerText = reversedSlicedValue;
+        }
+    </script>
+</body>
+</html>

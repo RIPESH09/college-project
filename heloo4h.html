@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operators</title>
+</head>
+<body>
+    <h1>JavaScript Example - Spread Operators</h1>
+
+    <button onclick="separateChars()">Show Array Values</button>
+    <button onclick="findMaxMin()">Find Max and Min</button>
+    <button onclick="joinArray()">Join Arrays</button>
+    <button onclick="displayElement('Hello, World!')">Display Message</button>
+    <button onclick="sampleforeach()">Display Sample List</button> <!-- New button added -->
+
+    <p id="result"></p>
+    <p id="ex2"></p>
+
+    <script>
+        function separateChars() {
+            let a = "LumbiniAcademic";
+            console.log(a);
+
+            let b = [...a];
+
+            document.getElementById("result").innerText = `Array b (characters of the string): [${b.join(', ')}]`;
+        }
+
+        function findMaxMin() {
+            let str = "123456789";
+            let numbers = [...str].map(Number);
+
+            let max = Math.max(...numbers);
+            let min = Math.min(...numbers);
+
+            console.log("Max:", max);
+            console.log("Min:", min);
+
+            document.getElementById("result").innerText = 
+                `Max value: ${max}\nMin value: ${min}`;
+        }
+
+        function joinArray() {
+            let courseOne = ["bca", "bim", "bit"];
+            let courseTwo = ["bbm", "bbs", "mca"];
+
+            let mergedCourse = [...courseOne, ...courseTwo];
+            console.log(mergedCourse);
+
+            document.getElementById("result").innerText = 
+                `Merged Array: [${mergedCourse.join(', ')}]`;
+        }
+
+        function displayElement(element) {
+            document.getElementById('ex2').innerText = element;
+            
+        }
+
+        function sampleforeach() {
+            let sampleList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+            // Apply displayElement to each item in the array
+            sampleList.forEach(displayElement);
+        }
+
+
+        function displayEachElements ()
+    </script>
+</body>
+</html>
